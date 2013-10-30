@@ -17,24 +17,20 @@ class LangForm extends Form{
     public $request;
     
     public function __construct($lang = null) {
-        parent::__construct('lang');
+        parent::__construct('LangForm');
         
         $this->select = new Select('lang');
         $this->select->setValueOptions(array(
             'en_US' => 'English',
             'fr_FR' => 'French',
+            'es_ES' => 'Spain',
         ));
         $this->select->setValue($lang);
+        $this->select->setAttribute('id', 'lang');
+        $this->select->setAttribute('onchange', 'document.LangForm.submit()');
         
         $this->add($this->select);
-        $this->add(array(
-            'name' => 'submit',
-            'type' => 'Submit',
-            'attributes' => array(
-                'value' => 'Go',
-                'id' => 'submitbutton',
-            ),
-        ));
+        
     }
     
     public function setLang($lang){
