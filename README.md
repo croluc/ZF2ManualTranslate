@@ -25,6 +25,7 @@ Module architecture :
 To make this module work, edit the file config/application.config.php :
 
 <?php
+
     return array(
         'modules' => array(
         'Application',
@@ -32,6 +33,7 @@ To make this module work, edit the file config/application.config.php :
         'Lang',   # <-- add this line
     ),
   ...
+  );
 ?>
   
 To add the LangForm in the layout, edit ./module/Application/view/layout/layout.phtml
